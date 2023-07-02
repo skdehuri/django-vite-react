@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django-vite-todo"
+version = "0.1.0"
+description = ""
+authors = ["Swaraj <swaraj.dehuri@gmail.com>"]
+readme = "README.md"
+packages = [{include = "django_vite_todo"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+django-vite = "^2.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
