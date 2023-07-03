@@ -2,7 +2,8 @@
 
 {% load django_vite %}
 
-{% block bundle %}
+{% block vite_bundle %}
+    {{ block.super }}
     {% vite_asset 'static/frontend/src/components/todo/main.tsx' %}
 {% endblock %}
 

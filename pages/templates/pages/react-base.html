@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    {% comment %} {% vite_asset 'static/frontend/src/main.tsx' %} {% endcomment %}
-    {% block bundle %}
+    {% block vite_bundle %}
+      <script type="module">
+        import * as RefreshRuntime from 'http://localhost:3000/@react-refresh'
+        RefreshRuntime.injectIntoGlobalHook(window)
+        window.$RefreshReg$ = () => {}
+        window.$RefreshSig$ = () => (type) => type
+        window.__vite_plugin_react_preamble_installed__ = true
+      </script>
     {% endblock %}
 
     {% block title %}
     {% endblock %}
-    {% comment %} <title>Django Vite Example</title> {% endcomment %}
   </head>
 
   <body>
     {% block content %}
     {% endblock %}
-    {% comment %} <div id="root"></div> {% endcomment %}
   </body>
 </html>
