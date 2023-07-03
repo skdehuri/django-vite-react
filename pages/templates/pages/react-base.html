@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     {% block vite_bundle %}
-      <script type="module">
+      {% comment %} <script type="module">
         import * as RefreshRuntime from 'http://localhost:3000/@react-refresh'
         RefreshRuntime.injectIntoGlobalHook(window)
         window.$RefreshReg$ = () => {}
         window.$RefreshSig$ = () => (type) => type
         window.__vite_plugin_react_preamble_installed__ = true
-      </script>
+      </script> {% endcomment %}
     {% endblock %}
 
     {% block title %}

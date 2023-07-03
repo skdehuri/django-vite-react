@@ -17,11 +17,11 @@ export default defineConfig({
   },
   build: {
     manifest: true,
-    outDir: 'static/frontend/dist/',
+    outDir: 'static/dist/',
     rollupOptions: {
       input: {
-        main: 'static/frontend/src/main.tsx',
-        todo: 'static/frontend/src/components/todo/main.tsx',
+        main: 'frontend/src/main.tsx',
+        todo: 'frontend/src/components/todo/main.tsx',
       }
     },
   }
