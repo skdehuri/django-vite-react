@@ -1,0 +1,15 @@
+{% extends 'pages/react-base.html' %}
+
+{% load django_vite %}
+
+{% block bundle %}
+    {% vite_asset 'static/frontend/src/components/todo/main.tsx' %}
+{% endblock %}
+
+{% block title %}
+    <title>Django Vite Example</title>
+{% endblock %}
+
+{% block content %}
+    <div id="root"></div>
+{% endblock %}

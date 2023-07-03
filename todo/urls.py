@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import views
+from .views import TodoHome
 
 urlpatterns = [
-    path("", views.index, name="todo"),
+    path("", TodoHome.as_view(), name="todo-home"),
 ]

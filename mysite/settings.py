@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'todo',
+    'django_vite',
 ]
 
 MIDDLEWARE = [
@@ -118,8 +120,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Where ViteJS assets are built.
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / STATIC_URL / "frontend" / "dist"
+
+# If use HMR or not.
+DJANGO_VITE_DEV_MODE = False
+
+# Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
+# # when run command python manage.py collectstatic
+STATICFILES_DIRS = [
+    DJANGO_VITE_ASSETS_PATH,
+    # BASE_DIR / STATIC_URL / "frontend" / "src" / "assets",
+]
