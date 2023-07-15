@@ -46,3 +46,5 @@ staticfiles/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+
+settings_local.py
