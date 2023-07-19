@@ -1,0 +1,27 @@
+version: "1"
+services:
+  web:
+    build:
+      context: .
+    container_name: web
+    restart: unless-stopped
+    tty: true
+    working_dir: /opt/apps
+    volumes:
+      - .:/opt/apps/
+      - .pgpass:/root/.pgpass
+      - .pg_service.conf:/root/.pg_service.conf
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    environment:
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
