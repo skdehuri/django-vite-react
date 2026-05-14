@@ -10,3 +10,8 @@
 5. Run npm/pnpm install to install all the frontend dependencies (Assuming node and npm/pnmp is installed) 
 6. Run the django local server using python manage.py runserver
 8. Run the vite local server using pnpm install
+
+## Unit testing (Vitest)
+1. Run all tests: `pnpm test`
+2. Run in watch mode: `pnpm test:watch`
+3. Generate coverage report: `pnpm test:coverage`
