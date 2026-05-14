@@ -2,14 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 
-export default defineConfig(({ mode }) => {
-  // const env = loadEnv(mode, process.cwd());
+export default defineConfig(() => {
   return {
     plugins: [react()],
     base: '/static/',
     server: {
       origin: 'http://127.0.0.1:3000',
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 3000,
       open: false,
       watch: {

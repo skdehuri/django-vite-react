@@ -129,14 +129,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / STATIC_URL / "dist"
+# django-vite v3 configuration
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": False,
+        "manifest_path": BASE_DIR / STATIC_URL / "dist" / ".vite" / "manifest.json",
+        "dev_server_port": 3000,
+    }
+}
 
-# If use HMR or not.
-DJANGO_VITE_DEV_MODE = False
-
-# Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
-# # when run command python manage.py collectstatic
+# Include Vite build output in STATICFILES_DIRS so collectstatic picks it up
 STATICFILES_DIRS = [
-    DJANGO_VITE_ASSETS_PATH,
+    BASE_DIR / STATIC_URL / "dist",
 ]
