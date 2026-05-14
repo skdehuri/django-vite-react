@@ -8,7 +8,7 @@ export default defineConfig(() => {
     base: '/static/',
     server: {
       origin: 'http://127.0.0.1:3000',
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 3000,
       open: false,
       watch: {
