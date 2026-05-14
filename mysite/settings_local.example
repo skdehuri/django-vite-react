@@ -1,6 +1,6 @@
 from .settings import * # noqa
 
-DJANGO_VITE_DEV_MODE = True
+DJANGO_VITE["default"]["dev_mode"] = True
 
 INTERNAL_IPS = ["127.0.0.1"]
 
